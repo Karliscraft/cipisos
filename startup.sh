@@ -1,18 +1,13 @@
-#!/bin/bash
+#!/bin/sh
 
-rpws init 2
-#SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
-ratpoison -c "addhook newwindow exec ${0} urxvt1"
-urxvt -e "sh" &
-if [ "$1" == "urxvt1" ]; then
-	ratpoison -c "remhook newwindow $(ratpoison -c "listhook newwindow")"
-	ratpoison -c "addhook newwindow exec ${0} urxvt2"
-	urxvt -e "sh" &
-elif [ "$1" == "urxvt2" ]; then
-	ratpoison -c "remhook newwindow $(ratpoison -c "listhook newwindow")"
-	ratpoison -c vsplit
-	rpws 2
-	ratpoison -c "addhook newwindow exec rpws 1"
-	firefox &
-	./panel.sh | lemonbar -p | sh
-fi
+xfce4-terminal -e "node ~/BotFolder/Automatic/bot.js" &
+xfce4-terminal -e "node ~/BotFolder/'Schubi Automatic'/automatic.js" &
+xfce4-terminal -e "node ~/BotFolder/'Schubi Bot'/bot.js" &
+xfce4-terminal -e "node ~/BotFolder/'current bot'/bot.js" &
+sleep 5
+ratpoison -c vsplit
+ratpoison -c hsplit
+ratpoison -c focusright
+ratpoison -c hsplit
+rpws 2
+firefox &

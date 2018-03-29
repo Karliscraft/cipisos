@@ -21,7 +21,19 @@ while len(c('lsw').split()) < 4:
     pass
 
 for positioned, i in enumerate(c('lsw').split('\n')):
-    if positioned == 0:
+    classes = [x.replace(',' '') for x in c('xprop', '-id', i, 'NET_WM_CLASS').split()[2:]]
+    if positioned == 0 and 'xfce4-terminal' in classes:
+        x, y = 0, 0
+        width, height = screen_size[0] / 2, screen_size[1] / 2
+    elif positioned == 1 and 'xfce4-terminal' in classes:
+        x, y = screen_size[0] / 2, 0
+        width, height = screen_size[0] / 2. screen_size[1] / 2
+    elif positioned == 2 and 'xfce4-terminal' in classes:
+        x, y = 0, screen_size[1] / 2
+        width, height = screen_size[0] / 2, screen_size[1] /  2
+    elif positioned == 3 and 'xfce4-terminal' in classes:
+        x, y = screen_size[0] / 2, screen_size[1] / 2
+        width, height = screen_size
 
 process = po(['wew'], encoding = 'utf-8', stdout = PIPE)
 while True:

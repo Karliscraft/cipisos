@@ -33,7 +33,14 @@ for positioned, i in enumerate(c('lsw').split('\n')):
         width, height = screen_size[0] / 2, screen_size[1] /  2
     elif positioned == 3 and 'xfce4-terminal' in classes:
         x, y = screen_size[0] / 2, screen_size[1] / 2
-        width, height = screen_size
+        width, height = screen_size[0] / 2, screen_size[1] / 2
+    else:
+        for window in c('lsw'):
+            wi
+            windows.append({
+                'id': window,
+                'x': c('wattr x')}))
+
 
 process = po(['wew'], encoding = 'utf-8', stdout = PIPE)
 while True:

@@ -29,5 +29,10 @@ bspc subscribe node_manage | while read -a msg ; do
 done &
 
 while true; do
-	CURRENT_DESKTOP_ID=$(bspc query -D -d)
+	CURRENT_DESKTOP_NAME=$(bspc query -D -d --names)
+	COLORS=("#000000" "#000000" "#000000")
+	NAMES=("terminals" "browser" "normal")
+	for index in {0..2}; do
+		if [ "$CURRENT_DESKTOP_NAME" == "${NAMES[$index]}" ]; do
+
 

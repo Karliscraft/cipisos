@@ -31,8 +31,22 @@ done &
 while true; do
 	CURRENT_DESKTOP_NAME=$(bspc query -D -d --names)
 	COLORS=("#000000" "#000000" "#000000")
+	TCOLORS=("#ffffff" "#ffffff" "#ffffff")
 	NAMES=("terminals" "browser" "normal")
+	echo -n "%{l}"
 	for index in {0..2}; do
 		if [ "$CURRENT_DESKTOP_NAME" == "${NAMES[$index]}" ]; do
+			COLORS[$index]="#ffffff"
+			TCOLORS[$index]="#000000"
+		fi
+		echo -n "%{A:bspc desktop -f ${NAMES[$index]}:}%{B${COLORS[$index]}}%{F${COLORS[$index]}}${NAMES[$index]}%{B-}%{F-}%{A}"
+	done
+	echo "%{c}$(date)%{r}$(acpi --battery)"
+done | lemonbar -p | sh &
+xfce4-terminal
+xfce4-terminal
+xfce4-terminal
+xfce4-terminal
+chromium
 
 

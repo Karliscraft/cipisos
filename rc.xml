@@ -779,5 +779,47 @@
 
   # end of the example
 -->
+          <application role="bot*">
+                  <decor>no</decor>
+                  <size>
+                          <width>50%</width>
+                          <height>50%</height>
+                  </size>
+                  <desktop>1</desktop>
+          </application>
+          <application role="bot1">
+                  <position>
+                          <x>0</x>
+                          <y>0</y>
+                  </position>
+          </application>
+          <application role="bot2">
+                  <position>
+                          <x>0</x>
+                          <y>center</y>
+                  </position>
+          </application>
+          <application role="bot3">
+                  <position>
+                          <x>center</x>
+                          <y>0</y>
+                  </position>
+          </application>
+          <application role="bot4">
+                  <position>
+                          <x>center</x>
+                          <y>center</y>
+                  </position>
+          </application>
+          <application class="Chromium">
+                  <position>
+                          <x>0</x>
+                          <y>0</y>
+                  </position>
+                  <size>
+                          <width>100%</width>
+                          <height>100%</height>
+                  </size>
+          </application>
   </applications>
 </openbox_config>

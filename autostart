@@ -1,0 +1,3 @@
+#!/bin/bash
+xfce4-terminal --role bot1 -e "node ~/BotFolder/Automatic/automatic.js &"
+xfce4-terminal --role bot2 -e "node ~/BotFolder/'Schubi Automatic'/automatic.js &"
